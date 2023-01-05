@@ -15,6 +15,11 @@ model Test {
   name String
 }
 
+model TestTwo {
+  id   Int    @id @default(autoincrement())
+  name String
+}
+
 model User {
   // Información personal
   // Se genera a travez de inputs
