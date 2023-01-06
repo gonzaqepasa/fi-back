@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "ts-node-dev index.ts",
+    "create-activity": "ts-node scripts/create-activity.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gonzalo Martinez",

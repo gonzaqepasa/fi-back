@@ -7,6 +7,14 @@ CREATE TABLE "Test" (
 );
 
 -- CreateTable
+CREATE TABLE "TestTwo" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+
+    CONSTRAINT "TestTwo_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "email" TEXT,
@@ -15,6 +23,7 @@ CREATE TABLE "User" (
     "description" TEXT,
     "active" BOOLEAN NOT NULL,
     "activityId" INTEGER NOT NULL,
+    "calendarId" INTEGER NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -52,13 +61,13 @@ CREATE TABLE "Month" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Calendar_userId_key" ON "Calendar"("userId");
+CREATE UNIQUE INDEX "User_calendarId_key" ON "User"("calendarId");
 
 -- AddForeignKey
 ALTER TABLE "User" ADD CONSTRAINT "User_activityId_fkey" FOREIGN KEY ("activityId") REFERENCES "Activity"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Calendar" ADD CONSTRAINT "Calendar_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "User" ADD CONSTRAINT "User_calendarId_fkey" FOREIGN KEY ("calendarId") REFERENCES "Calendar"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Month" ADD CONSTRAINT "Month_userId_fkey" FOREIGN KEY ("userId") REFERENCES "Calendar"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
