@@ -36,9 +36,10 @@ model Activity {
   // información de actividad
   nameActivity String
   modality     String
-
+  price        Int
+  
   //Todos los usuarios que tienen esta actividad
-  User User[]
+  User         User[]
 }
 
 model Calendar {
@@ -66,6 +67,7 @@ model Month {
   id Int @id @default(autoincrement())
 
   // Información del mes 
+  monthNum  Int
   monthName String
   addData   String
   addAdmin  String

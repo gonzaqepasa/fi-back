@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 // import { prisma } from "./db";
 // import routeProducts from "./routes/products";
 import routeUser from "./routes/user";
+import routeMonth from "./routes/month";
+import routeActivity from "./routes/activity";
 
 
 const app = express();
@@ -18,6 +20,8 @@ app.use(bodyParser.json());
 
 
 app.use('/user',routeUser)
+app.use('/month',routeMonth)
+app.use('/activity',routeActivity)
 
 
 
