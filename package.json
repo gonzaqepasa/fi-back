@@ -2,8 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
-  "type": "module",
+  "main": "index.ts",  
   "scripts": {
     "start": "ts-node index.ts",
     "dev": "ts-node-dev index.ts",
